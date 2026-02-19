@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth color transitions for theme switching */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Prevent transition on specific elements */
+.no-transition {
+  @apply transition-none;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full hover:bg-gray-500 dark:hover:bg-gray-500;
+}
+
+/* Code block styling for markdown */
+code {
+  @apply bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm font-mono;
+}
+
+pre {
+  @apply bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto;
+}
+
+pre code {
+  @apply bg-transparent px-0 py-0 text-gray-800 dark:text-gray-200;
+}
+
+/* Markdown content styling */
+.prose {
+  @apply text-foreground dark:text-dark-foreground;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mt-6 mb-4 dark:text-dark-foreground;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-5 mb-3 dark:text-dark-foreground;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mt-4 mb-2 dark:text-dark-foreground;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed dark:text-gray-300;
+}
+
+.prose ul,
+.prose ol {
+  @apply mb-4 ml-6;
+}
+
+.prose li {
+  @apply mb-2 dark:text-gray-300;
+}
+
+.prose a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-blue-600 dark:border-blue-400 pl-4 italic my-4 text-gray-600 dark:text-gray-400;
+}
+
+/* Animation utilities */
+@layer utilities {
+  .fade-in {
+    @apply animate-fade-in;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent;
+  }
+}
